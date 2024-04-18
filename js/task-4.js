@@ -4,16 +4,15 @@ const onFormSubmit = (event) => {
   const formEl = event.currentTarget.elements;
 
   const info = {
-    email: formEl.email.value,
-    pass: formEl.password.value,
+    email: formEl.email.value.trim(),
+    pass: formEl.password.value.trim(),
   };
 
-  console.log(info);
-
-  event.currentTarget.reset();
   if (info.email === "" || info.pass === "") {
     return alert("All form fields must be filled in");
   }
-};
 
+  console.log(info);
+  form.reset();
+};
 form.addEventListener("submit", onFormSubmit);
